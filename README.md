@@ -45,6 +45,9 @@ Screenshot
 
 ![alt_tag](https://puu.sh/y202u/2c1c6009fa.png)
 
+Special Thanks
+----
+[Solury](https://github.com/soruly)
 
 Author
 ----
