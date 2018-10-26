@@ -1,49 +1,70 @@
 Image2Anime
 ----
 
-[![Version 0.4](https://img.shields.io/badge/stable-1.5-brightgreen.svg "Version 0.4")](https://github.com/anysz/Image2Anime) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Supported python versions: 2.7](https://img.shields.io/badge/python-2.7-green.svg "Supported python versions: 2.7")](https://www.python.org/download/releases/2.7/)
+[![Version 0.4](https://img.shields.io/badge/stable-1.5-brightgreen.svg "Version 0.4")](https://github.com/anysz/Image2Anime) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Supported python versions: 3.6](https://img.shields.io/badge/python-3.6-green.svg "Supported python versions: 3.6")](https://www.python.org/download/releases/3.6/)
 
 Refrence
 ----
 
-- Based : [Solury Repo](https://github.com/soruly/whatanime.ga)
-- WEB   : [The web](https://whatanime.ga/)
+- Based : [Solury Repo](https://github.com/soruly/trace.moe)
+- WEB   : [The web](https://trace.moe/)
 
-***The Endpoint isn't mine, I just make API***
+***The Endpoint isn't mine, I just make the API***
 
 Usage
 ----
 
- **In order you need to import urllib and requests**
+ **First of all, you need to install the library**
 
-     >>> import urllib, requests
+     $ python setup.py install
     
  **First use**
 
-     >>> ani_ = AniSearch('/path/to/file')
+     >>> import Image2Anime
 
- **To submit picture (MUST)**
+ **To star search the anime by local path**
 
-     >>> ret_ = ani_.post_image()
+     >>> res = Image2Anime.Search(r'/path/to/source')
 
- **To get resource (Array)**
+ **To star search the anime by io text/buffer**
+
+     >>> with open(r'/path/to/source', 'rb') as fp:
+     ...... res = Image2Anime.Search(fp)
+
+ **To star search the anime by raw image binary**
+
+     >>> res = Image2Anime.Search(image_raw=b"the image binary here")
+
+ **To star search the anime by url**
+
+     >>> res = Image2Anime.Search(url="http://the_image_url_here")
+
+ **To get the results**
  
-     >>> ret_res = ret_.get_data(ret_)
+     >>> print(res); print(res.result)
 
- **To get info spesific (Array)**
+ **To get match scenes and get other information**
 
-     >>> ret_ainfo = ret_.get_info(ret_res[0]['season'], res_res[0]['anime_name'])
+     >>> first_match = res.result.scenes[0]; other_information = first_match.getInfo(); duration = first_match.getDuration();
+     >>> # Its example how to get result data - the getInfo and getDuration stored on memory so you only need to do once
+     >>> print(first_match)
 
  **QnA**
 
-     Q : lib imported not found
+     Q : Whats the first step?
+     A : python setup.py install
+     Q : Where's the example?
+     A : At tests folder
+     Q : Lib imported not found?
      A : pip install PACKAGENAME
+     Q : Your issue not solved?
+     A : Create new issue with what your problem and what you want to achieve :D
 
 
 Screenshot
 ----------
 
-![alt_tag](https://puu.sh/y202u/2c1c6009fa.png)
+![alt_tag](usage.jpg)
 
 Special Thanks
 ----
