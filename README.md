@@ -68,7 +68,7 @@ Screenshot
 
 Special Thanks
 ----
-[Solury](https://github.com/soruly)
+[soruly](https://github.com/soruly)
 
 Author
 ----
