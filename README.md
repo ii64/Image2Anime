@@ -6,7 +6,7 @@ Image2Anime
 Refrence
 ----
 
-- Based : [Solury Repo](https://github.com/soruly/trace.moe)
+- Based : [soruly's Repo](https://github.com/soruly/trace.moe)
 - WEB   : [The web](https://trace.moe/)
 
 ***The Endpoint isn't mine, I just make the API***
