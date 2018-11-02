@@ -22,7 +22,10 @@ Usage
 
      >>> import Image2Anime
 
- **To check your quota and term
+ **To check your quota**
+     >>> stat = Image2Anime.Me()
+     >>> # If you have the token
+     >>> stat = Image2Anime.Me('theTokenHere')
 
  **To start search the anime by local path**
 
