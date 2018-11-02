@@ -7,7 +7,7 @@ from .main import Search
 from .main import Me
 """
     [Image2Anime-py] Search your Anime scene by Image! *YAY*
-        Endpoint   - Solury (https://github.com/solury)
+        Endpoint   - Soruly (https://github.com/soruly)
         Python API - Anysz  (https://github.com/anysz)
 
     Feels free to report code bug(s), i'll patch it as soon as possible
