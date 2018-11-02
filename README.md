@@ -1,7 +1,7 @@
 Image2Anime
 ----
 
-[![Version 0.4](https://img.shields.io/badge/stable-1.5-brightgreen.svg "Version 0.4")](https://github.com/anysz/Image2Anime) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Supported python versions: 3.6](https://img.shields.io/badge/python-3.6-green.svg "Supported python versions: 3.6")](https://www.python.org/download/releases/3.6/)
+[![Version 1.1.1](https://img.shields.io/badge/stable-1.1.1-brightgreen.svg "Version 1.1.1")](https://github.com/anysz/Image2Anime) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Supported python versions: 3.6](https://img.shields.io/badge/python-3.6-green.svg "Supported python versions: 3.6")](https://www.python.org/download/releases/3.6/)
 
 Refrence
 ----
@@ -23,6 +23,7 @@ Usage
      >>> import Image2Anime
 
  **To check your quota**
+ 
      >>> stat = Image2Anime.Me()
      >>> # If you have the token
      >>> stat = Image2Anime.Me('theTokenHere')
