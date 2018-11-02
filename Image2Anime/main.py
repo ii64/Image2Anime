@@ -3,6 +3,22 @@ from . import config
 from . import utils
 from . import models
 
+def Me(token=''):
+    assert isinstance(token, str), 'token must be string'
+    r = utils.sendGet(
+        config.host['main'] + '/api/me',
+        params={'token': token})
+    if(r.status_code != 200):
+        raise models.AnimeException(r.status_code, r.headers, r.content)
+    else:
+        try:
+            res_json = r.json()
+        except Exception as e:
+            raise models.AnimeException("Application", "Cant decode json response: me api (statistic)", e)
+        result = models.Statistic()
+        result.read(res_json)
+        return result
+
 class Search(object):
     host = config.host
     def __init__(self, image_path_or_obj=None, image_raw=None, url=None, filter="", trial="0", debug=False, **kw):
@@ -30,13 +46,14 @@ class Search(object):
         b64i = utils.base64_image(image, image_raw)
         dpyl = b'data:image/jpeg;base64,' + b64i
         req  = utils.sendPost(
-            self.host['main'] + '/search', 
+            self.host['main'] + '/api/search', 
             headers={},
             params={},
             data={
-                "data": dpyl,
+                "image": dpyl,
                 "filter": filter,
                 "trial": trial,
+                #'token': "", #not implemented
             })
         if(req.status_code != 200):
             raise models.AnimeException(req.status_code, req.headers, req.content)

@@ -6,7 +6,7 @@ Image2Anime
 Refrence
 ----
 
-- Based : [soruly's Repo](https://github.com/soruly/trace.moe)
+- Based : [Soruly's Repo](https://github.com/soruly/trace.moe)
 - WEB   : [The web](https://trace.moe/)
 
 ***The Endpoint isn't mine, I just make the API***
@@ -22,20 +22,22 @@ Usage
 
      >>> import Image2Anime
 
- **To star search the anime by local path**
+ **To check your quota and term
+
+ **To start search the anime by local path**
 
      >>> res = Image2Anime.Search(r'/path/to/source')
 
- **To star search the anime by io text/buffer**
+ **To start search the anime by io text/buffer**
 
      >>> with open(r'/path/to/source', 'rb') as fp:
      ...... res = Image2Anime.Search(fp)
 
- **To star search the anime by raw image binary**
+ **To start search the anime by raw image binary**
 
      >>> res = Image2Anime.Search(image_raw=b"the image binary here")
 
- **To star search the anime by url**
+ **To start search the anime by url**
 
      >>> res = Image2Anime.Search(url="http://the_image_url_here")
 
@@ -68,7 +70,7 @@ Screenshot
 
 Special Thanks
 ----
-[soruly](https://github.com/soruly)
+[Soruly](https://github.com/soruly)
 
 Author
 ----

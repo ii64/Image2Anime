@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-__author__   = "anysz, solury"
-__version__  = "1.0.1"
+__author__   = "anysz, soruly"
+__version__  = "1.1.1"
 __github__   = "https://github.com/anysz/Image2Anime"
-__website__  = "https://github.co/solury/trace.moe"
+__website__  = "https://github.co/soruly/trace.moe"
 from .main import Search
+from .main import Me
 """
     [Image2Anime-py] Search your Anime scene by Image! *YAY*
         Endpoint   - Solury (https://github.com/solury)

@@ -17,6 +17,42 @@ class AnimeException(Exception):
     def __init__(self, code=None, headers=None, message=None):
         Exception.__init__(self, code, headers, message)
 
+class Statistic(object):
+    #remap
+    #nowrite
+    def __init__(self, 
+        user_id=None, email=None, limit=None, limit_ttl=None, quota=None,
+        quota_ttl=None, user_limit=None, user_limit_ttl=None, user_quota=None, 
+        user_quota_ttl=None):
+            self.user_id = user_id
+            self.email   = email
+            self.limit   = limit
+            self.limit_ttl  = limit_ttl
+            self.quota      = quota
+            self.quota_ttl  = quota_ttl
+            self.user_limit = user_limit
+            self.user_limit_ttl = user_limit_ttl
+            self.user_quota = user_quota
+            self.user_quota_ttl = user_quota_ttl
+    def read(self, map_array):
+        try:
+            self.user_id = map_array.get('user_id', None)
+            self.email   = map_array.get('email', None)
+            self.limit   = map_array.get('limit', None)
+            self.limit_ttl = map_array.get('limit_ttl', None)
+            self.quota   = map_array.get('quota', None)
+            self.quota_ttl = map_array.get('quota_ttl', None)
+            self.user_limit = map_array.get('user_limit', None)
+            self.user_limit_ttl = map_array.get('user_limit_ttl', None)
+            self.user_quota = map_array.get('user_quota', None)
+            self.user_quota_ttl = map_array.get('user_quota_ttl', None)
+        except Exception as e: pass
+    def write(self):
+        return {}
+    def __repr__(self):
+        L = ['%s=%r' % (key, value) for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
 class AnimeScene(object):
     #remap 
     # :: from -> from_
