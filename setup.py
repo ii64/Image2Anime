@@ -6,6 +6,7 @@ import Image2Anime
 
 install_requires = [
     'requests',
+    'urllib3',
 ]
 
 packages = [
